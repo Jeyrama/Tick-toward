@@ -34,3 +34,5 @@ function tickToward ([a, b], [x, y]) {
 
   return res.concat(tickToward([a, b], [x, y]))
 }
+
+// or
