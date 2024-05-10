@@ -18,3 +18,19 @@ Examples:
 
 
 // Solution
+
+function tickToward ([a, b], [x, y]) {
+
+  let res = [[ a, b ]]; 
+
+  if (a === x && b === y)
+    return res;
+
+  if (a < x) a++;
+  if (a > x) a--;
+  
+  if (b < y) b++;
+  if (b > y) b--;
+
+  return res.concat(tickToward([a, b], [x, y]))
+}
