@@ -36,3 +36,13 @@ function tickToward ([a, b], [x, y]) {
 }
 
 // or
+
+function tickToward([a, b], [x, y]) {
+  let res = [[ a, b ]];
+  if (a == x && b == y) return res;
+  
+  const [dx, dy] = [x-a, y-b].map(Math.sign);
+  if (a != x) a += dx;
+  if (b != y) b += dy;
+  return [...res, ...tickToward([a, b], [x, y])];
+}
